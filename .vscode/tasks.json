@@ -6,7 +6,7 @@
         {
             "label": "PNG from PDF",
             "type": "shell",
-            "command": "convert -resize 25% -density 300 tests/test.pdf img/test.png"
+            "command": "convert -resize 25% -density 600 tests/test.pdf img/test.png"
         },
         {
             "label": "Build python package & reinstall",
