@@ -1,0 +1,100 @@
+\documentclass[a4paper,10pt]{article}
+% Times New Roman
+\usepackage[T1]{fontenc}
+\usepackage{newtxmath,newtxtext}
+%\usepackage[cm,empty]{fullpage} % it sets the text height and width and the  margins  such  that  the  page  is  almost  full
+\usepackage{geometry} % margins
+ \geometry{
+ a4paper,
+ left=15mm,
+ right=15mm,
+ top=5mm,
+ bottom=10mm,
+ }
+\usepackage{enumitem} % enumerate styles 
+\usepackage[spanish]{babel} % Spanish
+\usepackage{xcolor} % define color names
+\usepackage{tabularray} % nice tables
+\usepackage{tcolorbox} % big box
+\tcbuselibrary{breakable} % so that the big box can jump pages
+\usepackage{setspace} % double spacing in some regions
+\SetTblrTemplate{caption}{empty}{} % no captions in tables
+\setlength\parindent{0pt} % no indentations
+\definecolor{mygray}{RGB}{224,224,224} % brackground gray color
+\pagestyle{empty} % no page numbers
+
+\makeatletter
+\renewcommand \dotfill {\leavevmode \cleaders \hb@xt@ .28em{\hss .\hss }\hfill \kern \z@}
+\makeatother
+
+\begin{document}
+
+\begin{minipage}{0.3\textwidth}
+    \includegraphics[scale=.6]{logo.pdf}
+\end{minipage}
+\begin{minipage}{0.8\textwidth}
+    \begin{center}
+        \setlength{\fboxrule}{1pt}
+        \setlength{\fboxsep}{2mm}
+        \framebox{\textbf{\large ÁREA DE PERSONAL DOCENTE }}
+    \end{center}
+\end{minipage}
+
+
+\vspace{5mm}
+
+\begin{center}
+    \textbf{\large SOLICITUD DE COMISIÓN DE SERVICIO}
+\end{center}
+\begin{tcolorbox}[sharp corners, colback=white, colframe=black, breakable]
+    \begin{enumerate}[label=\textbf{\arabic*.-}, leftmargin=\marginparsep]
+        \item \onehalfspacing\textbf{DATOS DEL PROFESOR/A}\\
+              Nombre y Apellidos\dotfill\\
+              N.I.F.\dotfill Cuerpo o Categoría\dotfill\\
+              Departamento\dotfill\\
+              Centro\dotfill
+        \item \textbf{DATOS DEL VIAJE OBJETO DE LA SOLICITUD}\\
+              Objeto del desplazamiento\dotfill\\
+              Organizado por\dotfill\\
+              Lugar de celebración\dotfill Fecha\dotfill\\
+              Hora de salida\dotfill Hora de regreso\dotfill\\
+              Medio de locomoción\dotfill
+        \item \singlespacing\textbf{FINANCIACIÓN}\\
+              Presupuesto/Crédito \dotfill
+    \end{enumerate}
+    \begin{center}
+        Sevilla, \today
+    \end{center}
+
+    \vspace{-8mm}
+
+    \begin{longtblr}{width=.9\textwidth, colspec={X[1,l]X[1,l]X[1,l]}, row{1} = {c}}
+        EL SOLICITANTE     & V\textsuperscript{o}B\textsuperscript{o} DIRECTOR DEL DEPARTAMENTO & V\textsuperscript{o}B\textsuperscript{o} RESPONSABLE DEL CRÉDITO \\[15mm]
+        \raggedright Fdo.: & \raggedright Fdo.:                                                 & \raggedright Fdo.:
+    \end{longtblr}
+
+    \vspace{-3mm}
+
+    Vista la solicitud presentada por el Profesor/a cuyos datos figuran más arriba, este Rectorado ha resuelto autorizar el desplazamiento solicitado, de acuerdo con los datos anteriormente expuestos y con derecho a la percepción de la indemnización que legalmente corresponda.
+
+    \begin{longtblr}{width=.99\textwidth, colspec={|X[1,c]|X[1,c]|}, row{1} = {bg=mygray}, row{5} = {l}}
+        \hline
+        \textbf{\footnotesize CON CARGO A CRÉDITOS DE INVESTIGACIÓN} &                                                    \\
+        \hline
+        Sevilla, \today                                              & Sevilla, \today                                    \\
+        EL RECTOR,                                                   & EL RECTOR, P.D.~(Res.~Rec.~22-01-2021)             \\[-2mm]
+        P.D.~El Decano/a o El Director/a (Res.~Rec.~25-09-2007)      & La Vicerrectora de Personal Docente e Investigador \\[25mm]
+        Fdo.:                                                        & Fdo.: María Pastora Revuelta Marchena              \\
+        \hline
+    \end{longtblr}
+
+    Documentación a aportar para su tramitación económica:
+    \begin{enumerate}[leftmargin=26mm, labelsep=5mm, itemsep=0mm, parsep=0mm]
+        \item Justificación con los documentos originales (billetes de avión o tarjeta de embarque, ferrocarril, taxi o factura de agencia de viaje).
+        \item Si el medio de locomoción utilizado es vehículo particular deberá declararse el número de matrícula.
+        \item Certificación de asistencia.
+    \end{enumerate}
+\end{tcolorbox}
+
+
+\end{document}
