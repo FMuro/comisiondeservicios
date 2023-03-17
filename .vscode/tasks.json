@@ -7,6 +7,11 @@
             "label": "PNG from PDF",
             "type": "shell",
             "command": "convert -resize 25% -density 300 tex/cs.pdf img/cs.png"
-        }
+        },
+        {
+            "label": "TeX template",
+            "type": "shell",
+            "command": "python3.11 generate.py data/ejemplo.yaml tex/cs.tex"
+        },
     ]
 }
