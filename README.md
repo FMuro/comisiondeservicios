@@ -1,9 +1,11 @@
-# Comisión de servicios Universidad de Sevilla
+# Comisión de servicios de la Universidad de Sevilla
 
 Plantilla LaTeX para las comisiones de servicio de la Universidad de Sevilla, basada en el modelo oficial del 27-1-2021.
 
 Puedes bajar directamente la carpeta [`tex`](tex/), rellenar los datos necesarios en el archivo `cs.tex` y compilarlo con `pdflatex`. 
 
-También se incluye (TO-DO) una utilidad de línea de comandos que permite obtener la comisión de servicio en PDF aportando simplemente los datos necesarios.
+También se incluye (TO-DO) una utilidad de línea de comandos que permite obtener la comisión de servicio en PDF aportando simplemente los datos necesarios. Es un script the python. Para instalar las dependencias necesarias, puedes ejecutar el siguiente comando: 
+
+`pip install -r requirements.txt`
 
 ![](img/cs.png)
