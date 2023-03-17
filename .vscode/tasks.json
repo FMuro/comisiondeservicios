@@ -9,9 +9,14 @@
             "command": "convert -resize 25% -density 300 tex/cs.pdf img/cs.png"
         },
         {
-            "label": "TeX template",
+            "label": "Build python package & reinstall",
             "type": "shell",
-            "command": "python3.11 generate.py data/ejemplo.yaml tex/cs.tex"
+            "command": "python3.11 -m build && pip uninstall -y csus && pip install dist/*.whl"
+        },
+        {
+            "label": "Tests",
+            "type": "shell",
+            "command": "cd tests && cservicio test.yaml && cservicio -tex test.yaml && cd .."
         },
     ]
 }
