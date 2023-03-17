@@ -6,7 +6,7 @@
         {
             "label": "PNG from PDF",
             "type": "shell",
-            "command": "convert -resize 50% -density 300 tex/cs.pdf img/cs.png"
+            "command": "convert -resize 25% -density 300 tex/cs.pdf img/cs.png"
         }
     ]
 }
