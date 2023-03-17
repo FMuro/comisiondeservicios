@@ -8,7 +8,7 @@ Si lo prefieres, puedes simplemente copiar [`test.tex`](tests/test.tex), modific
 
 Ejecuta el siguiente comando en tu terminal:
 
-`pip install git+https://github.com/FMuro/comisiondeservicios.git#egg=csus`
+`pip install --upgrade git+https://github.com/FMuro/comisiondeservicios.git#egg=csus`
 # Instrucciones de uso
 
 Necesitas crear un fichero de texto plano con los datos de la comisión de servicio. Puedes copiar el modelo [`test.yaml`](tests/test.yaml), cambiarlo de nombre y editarlo con tus datos.
@@ -26,5 +26,9 @@ Si el resultado no fuera el deseado, puedes obtener el archivo TeX en lugar de u
 Esto generará un archivo TeX con el mismo nombre en el directorio de ejecución, en este caso `test.tex`. Puedes editar este archivo para intentar obtener un mejor resultado. 
 
 Si quieres compilar el TeX en un ordenador donde este script no esté instalado, tendrás que copiar el logotipo. La ruta aparece dentro del fichero TeX.
+
+# Desinstalación
+
+`pip uninstall csus`
 
 ![](img/cs.png)
