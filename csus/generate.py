@@ -32,9 +32,11 @@ def funcion():
     nombre = os.path.splitext(os.path.basename(datos))[0]
     # add script path to make template and logo available
     config = {"camino": str(script_path)}
-    with open(datos, 'r') as file_descriptor:
+    with open(datos, 'r') as archivo:
+        estretrabajo = yaml.load(archivo, Loader=yaml.BaseLoader)
         # get job data
-        config.update(yaml.load(file_descriptor, Loader=yaml.BaseLoader))
+        if estretrabajo is not None:
+            config.update(estretrabajo)
     with tempfile.TemporaryDirectory() as carpeta:
         # Opening the output file
         with open(carpeta+"/"+nombre+".tex", 'w', encoding="utf8") as file:
