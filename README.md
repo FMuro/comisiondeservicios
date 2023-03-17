@@ -40,4 +40,4 @@ Si quieres compilar el TeX en un ordenador donde este script no esté instalado,
 pip uninstall csus
 ```
 
-![](img/cs.png)
+![](img/test.png)
