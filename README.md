@@ -6,7 +6,9 @@ Si lo prefieres, puedes simplemente descargar el fichero [`test.tex`](tests/test
 
 # Instalación
 
-TO-DO.
+Ejecuta el siguiente comando en tu terminal:
+
+`pip install git+https://github.com/FMuro/comisiondeservicios.git#egg=csus`
 # Instrucciones de uso
 
 Necesitas crear un fichero de texto plano con los datos de la comisión de servicio. Puedes descargar el modelo [`test.yaml`](tests/test.yaml), cambiarlo de nombre y editarlo con tus datos.
