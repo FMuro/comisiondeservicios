@@ -25,23 +25,16 @@ ENV = Environment(loader=FileSystemLoader(script_path), extensions=[
                   'jinja2.ext.do'], finalize=my_finalize)
 
 
-def yaml_loader(filepath):
-    # Loads a yaml file
-    with open(filepath, 'r') as file_descriptor:
-        data = yaml.load(file_descriptor, Loader=yaml.FullLoader)
-    return data
-
-
 def funcion():
     # read data file path
     datos = args[0]
     # file name
     nombre = os.path.splitext(os.path.basename(datos))[0]
-    # read current job data
-    with open(datos, 'r') as file_descriptor:
-        config = yaml.load(file_descriptor, Loader=yaml.FullLoader)
     # add script path to make template and logo available
-    config.update({"camino": str(script_path)})
+    config = {"camino": str(script_path)}
+    with open(datos, 'r') as file_descriptor:
+        # get job data
+        config.update(yaml.load(file_descriptor, Loader=yaml.BaseLoader))
     with tempfile.TemporaryDirectory() as carpeta:
         # Opening the output file
         with open(carpeta+"/"+nombre+".tex", 'w', encoding="utf8") as file:
