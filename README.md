@@ -12,6 +12,8 @@ Ejecuta el siguiente comando en tu terminal:
 pip install --upgrade git+https://github.com/FMuro/comisiondeservicios.git#egg=csus
 ```
 
+Este comando también sirve para actualizar a la versión más reciente.
+
 # Instrucciones de uso
 
 Necesitas crear un fichero de texto plano con los datos de la comisión de servicio. Puedes copiar el modelo [`test.yaml`](tests/test.yaml), cambiarlo de nombre y editarlo con tus datos.
