@@ -12,7 +12,6 @@ vuelta: 10-6-2022 23:00
 sustitutos: María y Paco
 asignaturas: Álgebra Lineal y Geometría II y Topología Algebraica
 curso_grupo: 1ºD y grupo único de máster MUM
-# las siguientes comillas se deben a los : de las horas
 horario: lunes de 9:00 a 11:00, martes de 13:30 a 14:30, jueves de 10:30 a 11:30 y lunes de 11:00 a 12:00
 
 # Esta parte cambia con menos frecuencia
