@@ -59,8 +59,10 @@ Centro: {{ centro }} \dotfill
 \item \textbf{DATOS DEL VIAJE OBJETO DE LA SOLICITUD}\\
 Objeto del desplazamiento: {{ motivo }} \dotfill\\
 Organizado por {{ organizacion }} \dotfill\\
-Lugar de celebración: {{ lugar }}\dotfill Fecha: {{ fecha }}\dotfill\\
-Hora de salida: {{ salida }}\dotfill Hora de regreso: {{ llegada }}\dotfill\\
+Lugar de celebración: {{ lugar }}\dotfill Fecha: del {{ ida | datetime_format }} al {{
+vuelta | datetime_format }}\dotfill\\
+Hora de salida: {{ ida | datetime_format("%H:%M") }}\dotfill Hora de regreso: {{ vuelta | datetime_format("%H:%M")
+}}\dotfill\\
 Medio de locomoción: {{ transporte }}\dotfill
 \item \singlespacing\textbf{FINANCIACIÓN}\\
 Presupuesto/Crédito: {{ proyecto }}\dotfill

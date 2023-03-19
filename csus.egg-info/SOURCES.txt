@@ -6,6 +6,7 @@ setup.py
 csus/__init__.py
 csus/cservicio.j2
 csus/generate.py
+csus/licencia.j2
 csus/logo.pdf
 csus.egg-info/PKG-INFO
 csus.egg-info/SOURCES.txt

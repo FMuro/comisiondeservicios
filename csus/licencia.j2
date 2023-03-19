@@ -1,0 +1,139 @@
+\documentclass[a4paper,10pt]{article}
+% Times New Roman
+\usepackage[T1]{fontenc}
+\usepackage{newtxmath,newtxtext}
+\usepackage{geometry} % margins
+\geometry{
+a4paper,
+left=15mm,
+right=15mm,
+top=5mm,
+bottom=10mm,
+}
+\usepackage[spanish]{babel} % Spanish
+\usepackage{xcolor} % define color names
+\usepackage{tabularray} % nice tables
+\usepackage{graphicx} % graphics
+\usepackage{setspace} % double spacing in some regions
+\usepackage{wasysym} % for Squarees as symbols
+\SetTblrTemplate{caption}{empty}{} % no captions in tables
+\setlength\parindent{0pt} % no indentations
+\definecolor{mygray}{RGB}{224,224,224} % brackground gray color
+\pagestyle{empty} % no page numbers
+
+\makeatletter
+\renewcommand \dotfill {\leavevmode \cleaders \hb@xt@ .28em{\hss .\hss }\hfill \kern \z@}
+\makeatother
+
+\begin{document}
+
+\begin{minipage}{0.3\textwidth}
+% El logotipo de la US se ha instalado en tu sistema junto con este programa
+% La ruta depende de tu sistema
+% Si quieres compilar este documento en un sistema sin este programa
+% copia también el archivo del logitipo y modifica la ruta acordemente
+\includegraphics[scale=.6]{ {{ camino }}/logo.pdf}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+
+\vspace{20mm}
+
+{% if menosde15dias is defined -%}{\LARGE \Square}{% else %}{\LARGE \XBox}{% endif %} \large LICENCIA POR ESTUDIOS
+\normalsize (inferior a 3 meses de duración)
+
+\vspace{5mm}
+
+{% if menosde15dias is defined -%}{\LARGE \XBox}{% else %}{\LARGE \Square}{% endif %} \large COMISIÓN DE SERVICIOS
+\normalsize (cumplimentar
+solicitud en impreso aparte)
+\end{minipage}
+
+\vspace{-2mm}
+
+\begin{minipage}{0.3\textwidth}
+\begin{longtblr}[l]{width=.95\textwidth, colspec={|X[1,l]|}}
+\hline
+\centering Informe del Departamento \\[-2mm]
+\centering EL DIRECTOR/A, \\[3mm]
+FAVORABLE\hspace{18mm}\Large\Square \\[-2mm]
+NO FAVORABLE\hspace{12.15mm}\Large\Square \\[-2mm]
+Motivar: \\
+{} \\[35mm]
+Fdo.: {{ director_dpto }} \\
+\hline
+\centering Informe del Centro \\[-2mm]
+\centering DECANO/A o DIRECTOR/A \\[3mm]
+FAVORABLE\hspace{18mm}\Large\Square \\[-2mm]
+NO FAVORABLE\hspace{12.15mm}\Large\Square \\[-2mm]
+Motivar: \\
+{} \\[35mm]
+Fdo.: {{ decano }} \\
+\hline
+\end{longtblr}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+\begin{longtblr}{width=\textwidth, colspec={X[1,l]}, row{1,8,17} = {bg=mygray}, vlines =
+{1,3,4,5,6,8,10,11,12,13,14,15,17,19,20,21,22,23}{solid}}
+\hline
+\textbf{DATOS DEL PROFESOR} \\
+\hline
+{} \\[-5mm]
+\hline
+\small D/Dña.~{{ solicitante }} \\
+\small N.I.F.~{{ NIF }} CUERPO DOCENTE O CATEGORÍA: {{ plaza }} \\
+\small DEPARTAMENTO: {{ departamento }} \\
+\small CENTRO: {{ centro }} \\
+\hline
+{} \\[-5mm]
+\hline
+\textbf{OBJETO DE LA SOLICITUD DE LICENCIA POR ESTUDIOS} \\
+\hline
+{} \\[-5mm]
+\hline
+Estancia en: {{ lugar }} \\
+Especificar actividades a desarrollar: {{ motivo }} \\
+Fecha de inicio [{{ ida | datetime_format("%d/%m/%Y") }}] Fecha de finalización [{{ vuelta | datetime_format("%d/%m/%Y")
+}}] \\
+\centering Sevilla, \today \\[-2mm]
+\centering Firma del interesado/a: \\[10mm]
+\textbf{EN EL SUPUESTO DE QUE DESEMPEÑE OTRA ACTIVIDAD AJENA A LA UNIVERSIDAD, DEBERÁ ADJUNTAR LA AUTORIZACIÓN DE SALIDA
+DE LA EMPRESA O INSTITUCIÓN.} \\
+\hline
+{} \\[-5mm]
+\hline
+\textbf{DURANTE LA AUSENCIA, SUS LABORES DOCENTES SERÁN ASUMIDAS POR:} \\
+\hline
+{} \\[-5mm]
+\hline
+\small PROFESORADO SUSTITUTO: {{ sustitutos }}\\
+\small ASIGNATURA: {{ asignaturas }}\\
+\small CURSO/GRUPO: {{ curso_grupo }} HORARIO(días y horas): {{ horario }}\\
+\centering\small FIRMA DEL PROFESOR SUSTITUTO \\[10mm]
+\hline
+\end{longtblr}
+\end{minipage}
+
+\vspace{-3mm}
+
+\begin{longtblr}{width=\textwidth, colspec={|X[1,c]|X[1,c]|}, row{1,2} = {bg=mygray}, row{3,4,5,7,12}={l}}
+\hline
+\SetCell[r=1,c=2]{c}\textbf{RESOLUCIÓN} \\
+\hline
+\textbf{Licencias de hasta 15 días} & \textbf{Licencias de más de 15 días o licencias de hasta 15 días con propuesta de
+denegación} \\
+\hline
+{\Large\Square}\small AUTORIZAR & {\Large\Square} \small AUTORIZAR \\
+\small Sevilla, \hspace{4mm} de \hspace{20mm} de \hspace{8mm} & \\
+\centering\small EL RECTOR & {\Large\Square} \small NO AUTORIZAR Motivación: \\[-2mm]
+\small P.D. El Decano/a o Director/a \\[-2mm]
+\small\centering (Res. Rec. De 25-09-2007)
+
+& \small Sevilla, \hspace{4mm} de \hspace{20mm} de \hspace{8mm} \\
+& \small EL RECTOR \\[-2mm]
+& \small P.D. (Res. Rec 22-01-2021) \\[-2mm]
+& \small La Vicerrectora de Personal Docente e Investigador \\
+{} \\[10mm]
+\small Fdo.: & \small Fdo.: {{ vicerrector }} \\
+\hline
+\end{longtblr}
+\end{document}

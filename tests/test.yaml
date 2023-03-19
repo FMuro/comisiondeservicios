@@ -3,10 +3,17 @@
 motivo: asistencia al congreso "The Abel Symposium 2022"
 organizacion: NTNU, Norwegian University of Science and Technology
 lugar: Aalesund, Noruega
-fecha: del 6 al 10 de junio de 2022
-# las horas tienen que ir entre comillas a causa de los :
-salida: "8:00"
-llegada: "23:00"
+# el formato ha de ser: día-mes-año horas:minutos
+ida: 6-6-2022 8:00
+vuelta: 10-6-2022 23:00
+
+# Esta parte es la referente a la licencia y cambia también cada vez
+
+sustitutos: María y Paco
+asignaturas: Álgebra Lineal y Geometría II y Topología Algebraica
+curso_grupo: 1ºD y grupo único de máster MUM
+# las siguientes comillas se deben a los : de las horas
+horario: lunes de 9:00 a 11:00, martes de 13:30 a 14:30, jueves de 10:30 a 11:30 y lunes de 11:00 a 12:00
 
 # Esta parte cambia con menos frecuencia
 
