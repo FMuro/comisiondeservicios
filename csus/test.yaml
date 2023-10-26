@@ -1,0 +1,31 @@
+# Esta es la parte que cambiará con cada comisión de servicio
+
+motivo: asistencia al congreso "The Abel Symposium 2022"
+organizacion: NTNU, Norwegian University of Science and Technology
+lugar: Aalesund, Noruega
+ida: 6-6-2022 8:00 # el formato de las fechas ha de ser: día-mes-año horas:minutos
+vuelta: 10-6-2022 23:00
+
+# Esta parte es la referente a la licencia y cambia también cada vez
+
+sustitutos: María y Paco
+asignaturas: Álgebra Lineal y Geometría II y Topología Algebraica
+curso_grupo: 1ºD y grupo único de máster MUM
+horario: lunes de 9:00 a 11:00, martes de 13:30 a 14:30, jueves de 10:30 a 11:30 y lunes de 11:00 a 12:00
+
+# Esta parte cambia con menos frecuencia
+
+proyecto: MTM-3000-4000
+IP: Ramón Flores Díaz
+director_dpto: Luis Narváez Macarro
+decano: Alfonso Carriazo Rubio
+vicerrector: María Pastora Revuelta Marchena
+
+# Tus datos personales. Esta parte seguramente no la tendrás que modificar nunca
+
+solicitante: Fernando Muro Jiménez
+NIF: 12345678-A
+plaza: Catedrático de Universidad
+departamento: Álgebra
+centro: Facultad de Matemáticas
+transporte: avión, tren, autobús, taxi, automóvil
