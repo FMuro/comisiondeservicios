@@ -14,7 +14,6 @@ args = [arg for arg in sys.argv[1:] if not arg.startswith("-")]
 
 # script path
 script_path = os.path.dirname(os.path.realpath(__file__))
-print(script_path)
 
 
 def my_finalize(thing):
