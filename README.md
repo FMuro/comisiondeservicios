@@ -16,7 +16,13 @@ Este comando también sirve para actualizar a la versión más reciente.
 
 # Instrucciones de uso
 
-Necesitas crear un fichero de texto plano con los datos de la comisión de servicio. Puedes copiar el modelo [`test.yaml`](tests/test.yaml), cambiarlo de nombre y editarlo con tus datos.
+Necesitas crear un fichero de texto plano con los datos de la comisión de servicio. Ejecutando
+
+```
+cservicio 
+```
+
+se crea el fichero `test.yaml` en tu directorio actual. Edítalo con tus datos. Puedes cambiarlo de nombre si quieres. Las siguientes instrucciones las tendrás que adaptar al nuevo nombre.
 
 Para generar la solicitud de comisión de servicio en PDF tienes que ejecutar el script del siguiente modo:
 
@@ -24,17 +30,17 @@ Para generar la solicitud de comisión de servicio en PDF tienes que ejecutar el
 cservicio test.yaml
 ```
 
-Esto generará un PDF con el mismo nombre en el directorio de ejecución, en este caso `test.pdf`.
+Esto generará dos fircheros PDF cuyos nombres comienzan con el mismo nombre que el directorio de ejecución. Si el directorio se llama `test` los documentos se llamarán `test_cservicio.pdf` y `test_licencia.pdf`. Si 
 
-Si el resultado no fuera el deseado, puedes obtener el archivo TeX en lugar de un PDF ejecutando:
+Si el resultado no fuera el deseado, puedes obtener los archivos TeX en lugar de un PDF ejecutando:
 
 ```
 cservicio -tex test.yaml
 ```
 
-Esto generará un archivo TeX con el mismo nombre en el directorio de ejecución, en este caso `test.tex`. Puedes editar este archivo para intentar obtener un mejor resultado. 
+Esto generará archivos TeX con los mismo nombres que antes indicamos, por ejemplo `test_cservicio.tex` y `test_licencia.tex`. Puedes editar estos archivos para intentar obtener un mejor resultado. 
 
-Si quieres compilar el TeX en un ordenador donde este script no esté instalado, tendrás que copiar el logotipo. La ruta aparece dentro del fichero TeX.
+Si quieres compilar los ficheros TeX en un ordenador donde este script no esté instalado, tendrás que copiar el logotipo. La ruta aparece dentro los propios fichero TeX.
 
 # Desinstalación
 

@@ -5,3 +5,6 @@ Summary: Comisión de servicios de la Universidad de Sevilla en PDF/LaTeX
 Author-email: fmuro@us.es
 License: GPL-3.0
 License-File: LICENSE
+Requires-Dist: PyYAML
+Requires-Dist: Jinja2
+Requires-Dist: python-dateutil

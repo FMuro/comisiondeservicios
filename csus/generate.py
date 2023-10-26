@@ -5,7 +5,9 @@ import shutil  # copy files
 import tempfile  # temporary folders and files
 from datetime import datetime  # deal with dates
 from dateutil.relativedelta import relativedelta  # date computations
-from jinja2 import Environment, FileSystemLoader, Template  # Jinja template
+from jinja2 import Environment, FileSystemLoader  # Jinja template
+import platform  # check OS
+import subprocess  # open file with default program
 
 # separate user-provided options and arguments
 # only expected yaml file as argument
@@ -34,45 +36,58 @@ ENV.filters["datetime_format"] = datetime_format
 
 
 def funcion():
-    # read data file path
-    datos = args[0]
-    # file name
-    nombre = os.path.splitext(os.path.basename(datos))[0]
-    # add script path to make template and logo available
-    config = {"camino": str(script_path)}
-    with open(datos, 'r') as archivo:
-        estretrabajo = yaml.load(archivo, Loader=yaml.BaseLoader)
-        # get job data
-        if estretrabajo is not None:
-            config.update(estretrabajo)
-    # get date/time as such in python
-    for key in ['ida', 'vuelta']:
-        print(config[key])
-        config[key] = datetime.strptime(config[key], "%d-%m-%Y %H:%M")
-    three_months_from_ida = config['ida'] + relativedelta(months=+3)
-    fifteen_days_from_ida = config['ida'] + relativedelta(days=+15)
-    documentos = ['cservicio']
-    if config['vuelta'] < fifteen_days_from_ida:
-        config.update({"menosde15dias": "menosde15dias"})
-        documentos.append('licencia')
-    elif config['vuelta'] < three_months_from_ida:
-        documentos.append('licencia')
+    if args:
+        # read data file path
+        datos = args[0]
+        # file name
+        nombre = os.path.splitext(os.path.basename(datos))[0]
+        # add script path to make template and logo available
+        config = {"camino": str(script_path)}
+        with open(datos, 'r') as archivo:
+            estetrabajo = yaml.load(archivo, Loader=yaml.BaseLoader)
+            # get job data
+            if estetrabajo is not None:
+                config.update(estetrabajo)
+        # get date/time as such in python
+        for key in ['ida', 'vuelta']:
+            config[key] = datetime.strptime(config[key], "%d-%m-%Y %H:%M")
+        three_months_from_ida = config['ida'] + relativedelta(months=+3)
+        fifteen_days_from_ida = config['ida'] + relativedelta(days=+15)
+        documentos = ['cservicio']
+        if config['vuelta'] < fifteen_days_from_ida:
+            config.update({"menosde15dias": "menosde15dias"})
+            documentos.append('licencia')
+        elif config['vuelta'] < three_months_from_ida:
+            documentos.append('licencia')
+        else:
+            config.update({"licencia": "masde3meses"})
+        with tempfile.TemporaryDirectory() as carpeta:
+            for output in documentos:
+                # Opening the output file
+                with open(os.path.join(carpeta, nombre+"_"+output+".tex"), 'w', encoding="utf8") as file:
+                    # Loading the template file
+                    plantilla = ENV.get_template("/"+output+".j2")
+                    # Rendering the output from data and template
+                    salida = plantilla.render(config)
+                    file.write(salida)  # Creating the output file
+                    file.close  # Closing the output file
+                # Compile output file
+                if "-tex" in opts:
+                    shutil.copy(os.path.join(
+                        carpeta, nombre+"_"+output+".tex"), ".")
+                else:
+                    os.system("pdflatex -output-directory=" +
+                              carpeta+" "+os.path.join(carpeta, nombre+"_"+output+".tex"))
+                    shutil.copy(os.path.join(
+                        carpeta, nombre+"_"+output+".pdf"), ".")
     else:
-        config.update({"licencia": "masde3meses"})
-    with tempfile.TemporaryDirectory() as carpeta:
-        for output in documentos:
-            # Opening the output file
-            with open(carpeta+"/"+nombre+"_"+output+".tex", 'w', encoding="utf8") as file:
-                # Loading the template file
-                plantilla = ENV.get_template("/"+output+".j2")
-                # Rendering the output from data and template
-                salida = plantilla.render(config)
-                file.write(salida)  # Creating the output file
-                file.close  # Closing the output file
-            # Compile output file
-            if "-tex" in opts:
-                shutil.copy(carpeta+"/"+nombre+"_"+output+".tex", ".")
-            else:
-                os.system("pdflatex -output-directory=" +
-                          carpeta+" "+carpeta+"/"+nombre+"_"+output+".tex")
-                shutil.copy(carpeta+"/"+nombre+"_"+output+".pdf", ".")
+        datos = "test.yaml"
+        shutil.copy(os.path.join(script_path, datos), ".")
+        print("Edita el archivo 'test.yaml' y ejecuta 'cservicio test.yaml'")
+        OS = platform.platform()
+        if "macOS" in OS:
+            subprocess.Popen(('open', datos))
+        elif "Windows" in OS:
+            subprocess.Popen(('notepad.exe', datos))
+        else:
+            subprocess.Popen(('xdg-open', datos))

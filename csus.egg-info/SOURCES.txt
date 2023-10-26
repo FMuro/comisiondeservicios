@@ -8,6 +8,7 @@ csus/cservicio.j2
 csus/generate.py
 csus/licencia.j2
 csus/logo.pdf
+csus/test.yaml
 csus.egg-info/PKG-INFO
 csus.egg-info/SOURCES.txt
 csus.egg-info/dependency_links.txt
