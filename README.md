@@ -22,7 +22,7 @@ Necesitas crear un fichero de texto plano con los datos de la comisión de servi
 cservicio 
 ```
 
-se crea el fichero `test.yaml` en tu directorio actual. Edítalo con tus datos. Puedes cambiarlo de nombre si quieres. Las siguientes instrucciones las tendrás que adaptar al nuevo nombre.
+se crea el fichero `test.yaml` en tu directorio actual. Edítalo con tus datos. Puedes cambiarlo de nombre si quieres. Las siguientes instrucciones las tendrás que adaptar al nuevo nombre. En sucesivos usos puedes crear el fichero `.yaml` desde cero o copiar uno anterior.
 
 Para generar la solicitud de comisión de servicio en PDF tienes que ejecutar el script del siguiente modo:
 
