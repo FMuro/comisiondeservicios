@@ -3,8 +3,7 @@
 motivo: asistencia al congreso "The Abel Symposium 2022"
 organizacion: NTNU, Norwegian University of Science and Technology
 lugar: Aalesund, Noruega
-# el formato ha de ser: día-mes-año horas:minutos
-ida: 6-6-2022 8:00
+ida: 6-6-2022 8:00 # el formato de las fechas ha de ser: día-mes-año horas:minutos
 vuelta: 10-6-2022 23:00
 
 # Esta parte es la referente a la licencia y cambia también cada vez
@@ -26,7 +25,7 @@ vicerrector: María Pastora Revuelta Marchena
 
 solicitante: Fernando Muro Jiménez
 NIF: 12345678-A
-plaza: Profesor Titular
+plaza: Catedrático de Universidad
 departamento: Álgebra
 centro: Facultad de Matemáticas
 transporte: avión, tren, autobús, taxi, automóvil

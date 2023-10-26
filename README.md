@@ -2,7 +2,7 @@
 
 Es un script de python, ejecutable desde la línea de comandos, que produce una solicitud de comisión de servicios de la Universidad de Sevilla en PDF a partir de los datos básicos. La plantilla actual está basada en el modelo oficial del 27-1-2021.
 
-Si lo prefieres, puedes simplemente copiar [`test.tex`](tests/test.tex), descargar [`logo.pdf`](csus/logo.pdf), modificar el firecho TeX con tus datos y la ruta correcta al logotipo y compilarlo sin instalar el script.
+Si lo prefieres, puedes simplemente copiar [`test.tex`](tests/test.tex), descargar [`logo.pdf`](csus/logo.pdf), modificar el fichero TeX con tus datos y la ruta correcta al logotipo y compilarlo sin instalar el script.
 
 # Instalación
 
