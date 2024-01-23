@@ -49,3 +49,7 @@ pip uninstall csus
 ```
 
 ![](img/test.png)
+
+# Fuentes
+
+[Pulsa aquí para acceder a los formularios oficiales de la Universidad de Sevilla.](https://www.us.es/trabaja-en-la-us/profesorado/gestion-administrativa/permisos-y-licencias)
