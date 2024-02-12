@@ -12,7 +12,7 @@ import subprocess  # open file with default program
 # CLI arguments
 
 parser = argparse.ArgumentParser(
-    prog='cservicio',
+    prog='cservicios',
     description='Rellena la documentación necesaria para una comisión de servicios de la Universidad de Sevilla',
     epilog='¡Disfruta de tus tareas administrativas!')
 
@@ -45,7 +45,7 @@ ENV.filters["datetime_format"] = datetime_format
 
 
 def funcion():
-    if args:
+    if args.file is not None:
         # read data file path
         datos = args.file
         # file name
@@ -62,7 +62,7 @@ def funcion():
             config[key] = datetime.strptime(config[key], "%d-%m-%Y %H:%M")
         three_months_from_ida = config['ida'] + relativedelta(months=+3)
         fifteen_days_from_ida = config['ida'] + relativedelta(days=+15)
-        documentos = ['cservicio']
+        documentos = ['cservicios']
         if config['vuelta'] < fifteen_days_from_ida:
             config.update({"menosde15dias": "menosde15dias"})
             documentos.append('licencia')

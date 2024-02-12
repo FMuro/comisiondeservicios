@@ -1,2 +1,2 @@
 [console_scripts]
-cservicio = csus.generate:funcion
+cservicios = csus.generate:funcion
