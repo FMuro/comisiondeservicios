@@ -4,8 +4,8 @@ pyproject.toml
 setup.cfg
 setup.py
 csus/__init__.py
-csus/cservicio.j2
-csus/generate.py
+csus/cservicios.j2
+csus/cservicios.py
 csus/licencia.j2
 csus/logo.pdf
 csus/test.yaml
