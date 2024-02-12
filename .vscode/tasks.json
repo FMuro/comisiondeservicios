@@ -6,7 +6,7 @@
         {
             "label": "PNG from PDF",
             "type": "shell",
-            "command": "convert -resize 25% -density 600 tests/test_cservicios.pdf img/csdatos.png"
+            "command": "convert -resize 25% -density 600 tests/csdatos_cservicios.pdf img/csdatos.png"
         },
         {
             "label": "Build python package & reinstall",
@@ -16,7 +16,7 @@
         {
             "label": "Tests",
             "type": "shell",
-            "command": "cd tests && cservicios -i && cservicios -f csdatos.yaml && cservicios -t -f csdatos.yaml && cd .."
+            "command": "cd tests && cservicios -i && cp ../csus/csdatos.yaml . && cservicios -f csdatos.yaml && cservicios -t -f csdatos.yaml && cd .."
         },
     ]
 }
