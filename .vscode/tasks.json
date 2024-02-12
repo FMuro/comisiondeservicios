@@ -16,7 +16,7 @@
         {
             "label": "Tests",
             "type": "shell",
-            "command": "cd tests && cservicio test.yaml && cservicio -tex test.yaml && cd .."
+            "command": "cd tests && cservicios test.yaml && cservicios -tex test.yaml && cd .."
         },
     ]
 }

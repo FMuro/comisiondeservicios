@@ -92,7 +92,7 @@ def funcion():
     else:
         datos = "test.yaml"
         shutil.copy(os.path.join(script_path, datos), ".")
-        print("Edita el archivo 'test.yaml' y ejecuta 'cservicio -f test.yaml'")
+        print("Edita el archivo 'test.yaml' y ejecuta 'cservicios -f test.yaml'")
         OS = platform.platform()
         if "macOS" in OS:
             subprocess.Popen(('open', datos))

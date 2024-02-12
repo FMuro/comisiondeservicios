@@ -19,7 +19,7 @@ Este comando también sirve para actualizar a la versión más reciente.
 Necesitas crear un fichero de texto plano con los datos de la comisión de servicio. Ejecutando
 
 ```
-cservicio 
+cservicios 
 ```
 
 se crea el fichero `test.yaml` en tu directorio actual y se abre con el editor de texto predeterminado del sistema. Edítalo con tus datos. Puedes cambiarlo de nombre si quieres. Las siguientes instrucciones las tendrás que adaptar al nuevo nombre. En sucesivos usos puedes crear el fichero `.yaml` desde cero o copiar uno anterior.
@@ -27,7 +27,7 @@ se crea el fichero `test.yaml` en tu directorio actual y se abre con el editor d
 Para generar la solicitud de comisión de servicio en PDF tienes que ejecutar el script del siguiente modo:
 
 ```
-cservicio -f test.yaml
+cservicios -f test.yaml
 ```
 
 Esto generará dos fircheros PDF cuyos nombres comienzan con el mismo nombre que el directorio de ejecución. Si el directorio se llama `test` los documentos se llamarán `test_cservicio.pdf` y `test_licencia.pdf`. Si 
@@ -35,7 +35,7 @@ Esto generará dos fircheros PDF cuyos nombres comienzan con el mismo nombre que
 Si el resultado no fuera el deseado, puedes obtener los archivos TeX en lugar de un PDF ejecutando:
 
 ```
-cservicio -t -f test.yaml
+cservicios -t -f test.yaml
 ```
 
 Esto generará archivos TeX con los mismo nombres que antes indicamos, por ejemplo `test_cservicio.tex` y `test_licencia.tex`. Puedes editar estos archivos para intentar obtener un mejor resultado. 
@@ -45,7 +45,7 @@ Si quieres compilar los ficheros TeX en un ordenador donde este script no esté 
 Puedes obtener ayuda en todo momento ejecutando el comando siguiente:
 
 ```
-$ cservicio -h
+$ cservicios -h
 ```
 
 # Desinstalación
