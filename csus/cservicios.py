@@ -17,15 +17,16 @@ parser = argparse.ArgumentParser(
     description='Rellena la documentación necesaria para una comisión de servicios de la Universidad de Sevilla',
     epilog='¡Disfruta de tus tareas administrativas!')
 
-parser.add_argument(
+group = parser.add_mutually_exclusive_group(required=True)
+group.add_argument(
     '-f', '--file', help="archivo YAML con los datos de tu comisión de servicio")
-parser.add_argument(
+group.add_argument(
     '-i', '--initialize', nargs='?', type=str, const='csdatos.yaml',
     help="crea un archivo YAML con el nombre indicado y el contenido por defecto")
+group.add_argument('-c', '--config', action='store_true',
+                   help='edita el archivo YAML que se usará por defecto')
 parser.add_argument('-t', '--tex', action='store_true',
                     help='genera los archivos TeX')
-parser.add_argument('-c', '--config', action='store_true',
-                    help='edita el archivo YAML que se usará por defecto')
 
 args = parser.parse_args()
 
@@ -68,6 +69,9 @@ def funcion():
         os.makedirs(config_folder, exist_ok=True)
         shutil.copy(os.path.join(
             script_path, "csdatos.yaml"), config_folder)
+    if args.file is None and args.tex:
+        print(
+            "La opción -t no tiene sentido si no se especifica un archivo de datos mediante -f")
     if args.config:
         print("Edita el archivo 'csdatos.yaml' con tus datos personales y habituales para futuros usos")
         open_text_file(config_file)
@@ -125,5 +129,3 @@ def funcion():
                               carpeta+" "+os.path.join(carpeta, nombre+"_"+output+".tex"))
                     shutil.copy(os.path.join(
                         carpeta, nombre+"_"+output+".pdf"), ".")
-    else:
-        print("Run 'cservicios -h' for help")
