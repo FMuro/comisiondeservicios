@@ -9,7 +9,7 @@ Si lo prefieres, puedes simplemente copiar [`csdatos_cservicios.tex`](tests/csda
 Ejecuta el siguiente comando en tu terminal:
 
 ```
-$ pip install --upgrade git+https://github.com/FMuro/comisiondeservicios.git#egg=csus
+pip install --upgrade git+https://github.com/FMuro/comisiondeservicios.git#egg=csus
 ```
 
 Este comando también sirve para actualizar a la versión más reciente.
@@ -19,7 +19,7 @@ Este comando también sirve para actualizar a la versión más reciente.
 Necesitas crear un fichero de texto plano con los datos de la comisión de servicio. Ejecutando
 
 ```
-$ cservicios -i
+cservicios -i
 ```
 
 se crea el fichero `csdatos.yaml` en tu directorio actual y se abre con el editor de texto predeterminado del sistema. Edítalo con tus datos. 
@@ -27,14 +27,14 @@ se crea el fichero `csdatos.yaml` en tu directorio actual y se abre con el edito
 Puedes cambiar el nombre `csdatos` por cualquier otro ejecutando 
 
 ```
-$ cservicios -i nombre_que_elijas
+cservicios -i nombre_que_elijas
 ```
 Las siguientes instrucciones las tendrás que adaptar al nombre escogido. En sucesivos usos puedes crear el fichero `.yaml` desde cero o copiar uno anterior.
 
 Para generar la solicitud de comisión de servicio en PDF tienes que ejecutar el script del siguiente modo:
 
 ```
-$ cservicios -f csdatos.yaml
+cservicios -f csdatos.yaml
 ```
 
 Esto generará dos fircheros PDF: `csdatos_cservicios.pdf` y `csdatos_licencia.pdf`.
@@ -42,13 +42,13 @@ Esto generará dos fircheros PDF: `csdatos_cservicios.pdf` y `csdatos_licencia.p
 Puedes cambiar el contenido por defecto del fichero `csdatos.yaml` para introducir tus datos personales y más frecuentes:
 
 ```
-$ cservicios -c
+cservicios -c
 ```
 
 Si el resultado no fuera el deseado, puedes obtener los archivos TeX en lugar de un PDF ejecutando:
 
 ```
-$ cservicios -t -f csdatos.yaml
+cservicios -t -f csdatos.yaml
 ```
 
 Esto generará archivos TeX con los mismo nombres que antes indicamos, por ejemplo `csdatos_cservicios.tex` y `csdatos_licencia.tex`. Puedes editar estos archivos para intentar obtener un mejor resultado. 
@@ -58,13 +58,13 @@ Si quieres compilar los ficheros TeX en un ordenador donde este script no esté 
 Puedes obtener ayuda en todo momento ejecutando el comando siguiente:
 
 ```
-$ cservicios -h
+cservicios -h
 ```
 
 # Desinstalación
 
 ```
-$ pip uninstall csus
+pip uninstall csus
 ```
 
 # Fuentes
