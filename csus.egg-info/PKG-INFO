@@ -2,9 +2,11 @@ Metadata-Version: 2.1
 Name: csus
 Version: 0.0.1
 Summary: Comisión de servicios de la Universidad de Sevilla en PDF/LaTeX
+Author: Fernando Muro
 Author-email: fmuro@us.es
 License: GPL-3.0
 License-File: LICENSE
 Requires-Dist: PyYAML
 Requires-Dist: Jinja2
 Requires-Dist: python-dateutil
+Requires-Dist: appdirs

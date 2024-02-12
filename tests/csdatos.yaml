@@ -15,8 +15,8 @@ horario: lunes de 9:00 a 11:00, martes de 13:30 a 14:30, jueves de 10:30 a 11:30
 
 # Esta parte cambia con menos frecuencia
 
-proyecto: MTM-3000-4000
-IP: Ramón Flores Díaz
+proyecto: PID2020-117971GB-C21
+IP: Fernando Muro Jiménez
 director_dpto: Luis Narváez Macarro
 decano: Alfonso Carriazo Rubio
 vicerrector: María Pastora Revuelta Marchena
@@ -24,7 +24,7 @@ vicerrector: María Pastora Revuelta Marchena
 # Tus datos personales. Esta parte seguramente no la tendrás que modificar nunca
 
 solicitante: Fernando Muro Jiménez
-NIF: 12345678-A
+NIF: 28765751L
 plaza: Catedrático de Universidad
 departamento: Álgebra
 centro: Facultad de Matemáticas

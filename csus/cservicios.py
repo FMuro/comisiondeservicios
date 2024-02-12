@@ -8,6 +8,7 @@ from dateutil.relativedelta import relativedelta  # date computations
 from jinja2 import Environment, FileSystemLoader  # Jinja template
 import platform  # check OS
 import subprocess  # open file with default program
+from appdirs import *
 
 # CLI arguments
 
@@ -18,13 +19,28 @@ parser = argparse.ArgumentParser(
 
 parser.add_argument(
     '-f', '--file', help="archivo YAML con los datos de tu comisión de servicio")
+parser.add_argument(
+    '-i', '--initialize', nargs='?', type=str, const='csdatos.yaml',
+    help="crea un archivo YAML con el nombre indicado y el contenido por defecto")
 parser.add_argument('-t', '--tex', action='store_true',
                     help='genera los archivos TeX')
+parser.add_argument('-c', '--config', action='store_true',
+                    help='edita el archivo YAML que se usará por defecto')
 
 args = parser.parse_args()
 
 # script path
 script_path = os.path.dirname(os.path.realpath(__file__))
+
+
+def open_text_file(datos):
+    OS = platform.platform()
+    if "macOS" in OS:
+        subprocess.Popen(('open', datos))
+    elif "Windows" in OS:
+        subprocess.Popen(('notepad.exe', datos))
+    else:
+        subprocess.Popen(('xdg-open', datos))
 
 
 def my_finalize(thing):
@@ -43,9 +59,29 @@ def datetime_format(value, format="%d-%m-%Y"):
 
 ENV.filters["datetime_format"] = datetime_format
 
+config_folder = user_config_dir('csus', 'fmuro')
+config_file = os.path.join(config_folder, "csdatos.yaml")
+
 
 def funcion():
-    if args.file is not None:
+    if not os.path.exists(config_file):
+        os.makedirs(config_folder, exist_ok=True)
+        shutil.copy(os.path.join(
+            script_path, "csdatos.yaml"), config_folder)
+    if args.config:
+        print("Edita el archivo 'csdatos.yaml' con tus datos personales y habituales para futuros usos")
+        open_text_file(config_file)
+    elif args.initialize:
+        # read data file path
+        datos = args.initialize
+        # file name
+        nombre = os.path.splitext(os.path.basename(datos))[0]
+        if not os.path.exists("./"+nombre+".yaml"):
+            shutil.copy(config_file, "./"+nombre+".yaml")
+        print("Edita el archivo '" + nombre +
+              ".yaml' y ejecuta 'cservicios -f " + nombre + ".yaml'")
+        open_text_file(nombre+".yaml")
+    elif args.file is not None:
         # read data file path
         datos = args.file
         # file name
@@ -90,13 +126,4 @@ def funcion():
                     shutil.copy(os.path.join(
                         carpeta, nombre+"_"+output+".pdf"), ".")
     else:
-        datos = "csdatos.yaml"
-        shutil.copy(os.path.join(script_path, datos), ".")
-        print("Edita el archivo 'csdatos.yaml' y ejecuta 'cservicios -f csdatos.yaml'")
-        OS = platform.platform()
-        if "macOS" in OS:
-            subprocess.Popen(('open', datos))
-        elif "Windows" in OS:
-            subprocess.Popen(('notepad.exe', datos))
-        else:
-            subprocess.Popen(('xdg-open', datos))
+        print("Run 'cservicios -h' for help")
