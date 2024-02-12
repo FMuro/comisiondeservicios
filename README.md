@@ -2,7 +2,7 @@
 
 Es un script de python, ejecutable desde la línea de comandos, que produce una solicitud de comisión de servicios de la Universidad de Sevilla en PDF a partir de los datos básicos. La plantilla actual está basada en el modelo oficial del 27-1-2021.
 
-Si lo prefieres, puedes simplemente copiar [`test.tex`](tests/test.tex), descargar [`logo.pdf`](csus/logo.pdf), modificar el fichero TeX con tus datos y la ruta correcta al logotipo y compilarlo sin instalar el script.
+Si lo prefieres, puedes simplemente copiar [`csdatos.tex`](tests/csdatos.tex), descargar [`logo.pdf`](csus/logo.pdf), modificar el fichero TeX con tus datos y la ruta correcta al logotipo y compilarlo sin instalar el script.
 
 # Instalación
 
@@ -22,12 +22,12 @@ Necesitas crear un fichero de texto plano con los datos de la comisión de servi
 cservicios 
 ```
 
-se crea el fichero `test.yaml` en tu directorio actual y se abre con el editor de texto predeterminado del sistema. Edítalo con tus datos. Puedes cambiarlo de nombre si quieres. Las siguientes instrucciones las tendrás que adaptar al nuevo nombre. En sucesivos usos puedes crear el fichero `.yaml` desde cero o copiar uno anterior.
+se crea el fichero `csdatos.yaml` en tu directorio actual y se abre con el editor de texto predeterminado del sistema. Edítalo con tus datos. Puedes cambiarlo de nombre si quieres. Las siguientes instrucciones las tendrás que adaptar al nuevo nombre. En sucesivos usos puedes crear el fichero `.yaml` desde cero o copiar uno anterior.
 
 Para generar la solicitud de comisión de servicio en PDF tienes que ejecutar el script del siguiente modo:
 
 ```
-cservicios -f test.yaml
+cservicios -f csdatos.yaml
 ```
 
 Esto generará dos fircheros PDF cuyos nombres comienzan con el mismo nombre que el directorio de ejecución. Si el directorio se llama `test` los documentos se llamarán `test_cservicios.pdf` y `test_licencia.pdf`. Si 
@@ -35,7 +35,7 @@ Esto generará dos fircheros PDF cuyos nombres comienzan con el mismo nombre que
 Si el resultado no fuera el deseado, puedes obtener los archivos TeX en lugar de un PDF ejecutando:
 
 ```
-cservicios -t -f test.yaml
+cservicios -t -f csdatos.yaml
 ```
 
 Esto generará archivos TeX con los mismo nombres que antes indicamos, por ejemplo `test_cservicios.tex` y `test_licencia.tex`. Puedes editar estos archivos para intentar obtener un mejor resultado. 
@@ -54,7 +54,7 @@ $ cservicios -h
 pip uninstall csus
 ```
 
-![](img/test.png)
+![](img/csdatos.png)
 
 # Fuentes
 

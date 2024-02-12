@@ -4,11 +4,11 @@ pyproject.toml
 setup.cfg
 setup.py
 csus/__init__.py
+csus/csdatos.yaml
 csus/cservicios.j2
 csus/cservicios.py
 csus/licencia.j2
 csus/logo.pdf
-csus/test.yaml
 csus.egg-info/PKG-INFO
 csus.egg-info/SOURCES.txt
 csus.egg-info/dependency_links.txt

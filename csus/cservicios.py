@@ -90,9 +90,9 @@ def funcion():
                     shutil.copy(os.path.join(
                         carpeta, nombre+"_"+output+".pdf"), ".")
     else:
-        datos = "test.yaml"
+        datos = "csdatos.yaml"
         shutil.copy(os.path.join(script_path, datos), ".")
-        print("Edita el archivo 'test.yaml' y ejecuta 'cservicios -f test.yaml'")
+        print("Edita el archivo 'csdatos.yaml' y ejecuta 'cservicios -f csdatos.yaml'")
         OS = platform.platform()
         if "macOS" in OS:
             subprocess.Popen(('open', datos))
