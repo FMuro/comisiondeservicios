@@ -1,5 +1,5 @@
 import yaml  # YAML parsing
-import sys  # Parsing arguments of the script
+import argparse  # Parsing arguments of the script
 import os  # interact with the operating system
 import shutil  # copy files
 import tempfile  # temporary folders and files
@@ -9,10 +9,19 @@ from jinja2 import Environment, FileSystemLoader  # Jinja template
 import platform  # check OS
 import subprocess  # open file with default program
 
-# separate user-provided options and arguments
-# only expected yaml file as argument
-opts = [opt for opt in sys.argv[1:] if opt.startswith("-")]
-args = [arg for arg in sys.argv[1:] if not arg.startswith("-")]
+# CLI arguments
+
+parser = argparse.ArgumentParser(
+    prog='cservicio',
+    description='Rellena la documentación necesaria para una comisión de servicios de la Universidad de Sevilla',
+    epilog='¡Disfruta de tus tareas administrativas!')
+
+parser.add_argument(
+    '-f', '--file', help="archivo YAML con los datos de tu comisión de servicio")
+parser.add_argument('-t', '--tex', action='store_true',
+                    help='genera los archivos TeX')
+
+args = parser.parse_args()
 
 # script path
 script_path = os.path.dirname(os.path.realpath(__file__))
@@ -38,7 +47,7 @@ ENV.filters["datetime_format"] = datetime_format
 def funcion():
     if args:
         # read data file path
-        datos = args[0]
+        datos = args.file
         # file name
         nombre = os.path.splitext(os.path.basename(datos))[0]
         # add script path to make template and logo available
@@ -72,7 +81,7 @@ def funcion():
                     file.write(salida)  # Creating the output file
                     file.close  # Closing the output file
                 # Compile output file
-                if "-tex" in opts:
+                if args.tex:
                     shutil.copy(os.path.join(
                         carpeta, nombre+"_"+output+".tex"), ".")
                 else:
@@ -83,7 +92,7 @@ def funcion():
     else:
         datos = "test.yaml"
         shutil.copy(os.path.join(script_path, datos), ".")
-        print("Edita el archivo 'test.yaml' y ejecuta 'cservicio test.yaml'")
+        print("Edita el archivo 'test.yaml' y ejecuta 'cservicio -f test.yaml'")
         OS = platform.platform()
         if "macOS" in OS:
             subprocess.Popen(('open', datos))
