@@ -1,8 +1,8 @@
 # Comisión de servicios de la Universidad de Sevilla
 
-Es un script de python, ejecutable desde la línea de comandos, que produce una solicitud de comisión de servicios de la Universidad de Sevilla en PDF a partir de los datos básicos. La plantilla actual está basada en el modelo oficial del 27-1-2021.
+Es un script de python, ejecutable desde la línea de comandos, que produce una solicitud de comisión de servicios y licencia de la Universidad de Sevilla en PDF a partir de los datos básicos. La plantilla actual está basada en el modelo oficial del 27-1-2021.
 
-Si lo prefieres, puedes simplemente copiar [`csdatos.tex`](tests/csdatos.tex), descargar [`logo.pdf`](csus/logo.pdf), modificar el fichero TeX con tus datos y la ruta correcta al logotipo y compilarlo sin instalar el script.
+Si lo prefieres, puedes simplemente copiar [`csdatos_cservicios.tex`](tests/csdatos_cservicios.tex), descargar [`logo.pdf`](csus/logo.pdf), modificar el fichero TeX con tus datos y la ruta correcta al logotipo y compilarlo sin instalar el script, y lo mismo con [`csdatos_licencia.tex`](tests/csdatos_licencia.tex).
 
 # Instalación
 
