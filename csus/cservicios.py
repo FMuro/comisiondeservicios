@@ -22,7 +22,7 @@ group.add_argument(
     '-f', '--file', help="archivo YAML con los datos de tu comisión de servicio")
 group.add_argument(
     '-i', '--initialize', nargs='?', type=str, const='csdatos.yaml',
-    help="crea un archivo YAML con el nombre indicado y el contenido por defecto")
+    help="crea un archivo YAML con el nombre indicado y el contenido por defecto", metavar='FILENAME')
 group.add_argument('-c', '--config', action='store_true',
                    help='edita el archivo YAML que se usará por defecto')
 parser.add_argument('-t', '--tex', action='store_true',
