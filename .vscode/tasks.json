@@ -11,7 +11,7 @@
         {
             "label": "Build python package & reinstall",
             "type": "shell",
-            "command": "rm -R dist & python3.11 -m build && pip uninstall -y csus && pip install dist/*.whl"
+            "command": "source .venv/bin/activate; rm -Rf dist & python3.12 -m build && python3 -m pip uninstall -y csus && python3 -m pip install dist/*.whl"
         },
         {
             "label": "Tests",
