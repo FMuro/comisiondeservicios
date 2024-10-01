@@ -14,10 +14,16 @@ pip install --upgrade git+https://github.com/FMuro/comisiondeservicios.git#egg=c
 
 Este comando también sirve para actualizar a la versión más reciente.
 
-¿Usas `pipx`? Esto es típico si tienes `python` instalado en macOS a través de `homebrew`. Entonces el comando es:
+¿Usas `pipx`? Esto es típico si tienes `python` instalado en macOS a través de `homebrew`. Entonces el comando para instalar es:
 
 ```
 pipx install git+https://github.com/FMuro/comisiondeservicios.git#egg=csus
+```
+
+El comando para actualizar es:
+
+```
+pipx upgrade csus
 ```
 
 # Instrucciones de uso
