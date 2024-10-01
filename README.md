@@ -14,6 +14,12 @@ pip install --upgrade git+https://github.com/FMuro/comisiondeservicios.git#egg=c
 
 Este comando también sirve para actualizar a la versión más reciente.
 
+¿Usas `pipx`? Esto es típico si tienes `python` instalado en macOS a través de `homebrew`. Entonces el comando es:
+
+```
+pipx install git+https://github.com/FMuro/comisiondeservicios.git#egg=csus
+```
+
 # Instrucciones de uso
 
 Necesitas crear un fichero de texto plano con los datos de la comisión de servicio. Ejecutando
@@ -61,10 +67,34 @@ Puedes obtener ayuda en todo momento ejecutando el comando siguiente:
 cservicios -h
 ```
 
+## Escrito explicativo usando ChatGPT en macOS
+
+Usando además el argumento `-g` se generará en PDF un escrito explicando la conexión del viaje con los objetivos del proyecto. 
+
+Por ejemplo, si ejecutas el siguiente comando:
+
+```
+cservicios -g -f csdatos.yaml
+```
+
+Esto generará tres fircheros PDF: `csdatos_cservicios.pdf`,  `csdatos_licencia.pdf` y `csdatos_escrito_explicativo.pdf`.
+
+Esto solo se puede hacer desde macOS, instalando previamente: 
+
+- La aplicación de escritorio de [ChatGPT](https://openai.com/chatgpt/download/), e ingresando en ella con tus credenciales.
+- El atajo [comisiondeserviciosgpt](https://www.icloud.com/shortcuts/8f376ec12c624f48a56abc63808ddc7e).
+
+
 # Desinstalación
 
 ```
 pip uninstall csus
+```
+
+Si lo instalaste usando `pipx`:
+
+```
+pipx uninstall csus
 ```
 
 # Fuentes
@@ -72,3 +102,7 @@ pip uninstall csus
 [Pulsa aquí para acceder a los formularios oficiales de la Universidad de Sevilla.](https://www.us.es/trabaja-en-la-us/profesorado/gestion-administrativa/permisos-y-licencias)
 
 ![](img/csdatos.png)
+
+# Pendiente de implementar
+
+- [ ] Licencias de 3 meses o más de duración.

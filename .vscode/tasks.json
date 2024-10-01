@@ -16,7 +16,7 @@
         {
             "label": "Tests",
             "type": "shell",
-            "command": "cd tests && cservicios -i && cp ../csus/csdatos.yaml . && cservicios -f csdatos.yaml && cservicios -t -f csdatos.yaml && cd .."
+            "command": "cd tests && cservicios -i && cp ../csus/csdatos.yaml . && cservicios -g -f csdatos.yaml && cservicios -t -g -f csdatos.yaml && cd .."
         },
     ]
 }

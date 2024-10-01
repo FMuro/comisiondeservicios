@@ -9,6 +9,7 @@ from jinja2 import Environment, FileSystemLoader  # Jinja template
 import platform  # check OS
 import subprocess  # open file with default program
 from appdirs import *
+import json # json parsing
 
 # CLI arguments
 
@@ -27,6 +28,8 @@ group.add_argument('-c', '--config', action='store_true',
                    help='edita el archivo YAML que se usará por defecto')
 parser.add_argument('-t', '--tex', action='store_true',
                     help='genera los archivos TeX')
+parser.add_argument('-g', '--gpt', action='store_true',
+                    help='genera un escrito explicativo usando ChatGPT (requiere conexión a internet)')
 
 args = parser.parse_args()
 
@@ -111,6 +114,18 @@ def funcion():
         else:
             config.update({"licencia": "masde3meses"})
         with tempfile.TemporaryDirectory() as carpeta:
+            # If the user wants to generate an explanatory text using ChatGPT
+            if args.gpt:
+                documentos.append('escrito_explicativo')
+                # Save the data in a JSON file
+                with open(os.path.join(carpeta, nombre+"_query.txt"), 'w', encoding="utf8") as file:
+                    file.write(json.dumps(estetrabajo))
+                # Run the ChatGPT shortcut
+                os.system("shortcuts run comisiondeserviciosgpt -i "+os.path.join(carpeta, nombre+"_query.txt")+" -o "+os.path.join(carpeta, nombre+"_answer.txt"))
+                # Update condif dictionary with the ChatGPT answer
+                with open(os.path.join(carpeta, nombre+"_answer.txt"), 'r', encoding="utf8") as file:
+                    content = file.read()
+                    config.update({"explicativo": content})
             for output in documentos:
                 # Opening the output file
                 with open(os.path.join(carpeta, nombre+"_"+output+".tex"), 'w', encoding="utf8") as file:

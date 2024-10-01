@@ -1,8 +1,8 @@
 # Esta es la parte que cambiará con cada comisión de servicio
 
-motivo: asistencia al congreso "The Abel Symposium 2022"
-organizacion: NTNU, Norwegian University of Science and Technology
-lugar: Aalesund, Noruega
+motivo: asistencia al congreso "Mathematical models with industry patterns"
+organizacion: Massachusetts Institute of Technology
+lugar: Boston, Massachusetts, USA
 ida: 6-6-2022 8:00 # el formato de las fechas ha de ser: día-mes-año horas:minutos
 vuelta: 10-6-2022 23:00
 
@@ -19,7 +19,7 @@ proyecto: MTM-3000-4000
 IP: Ramón Flores Díaz
 director_dpto: Luis Narváez Macarro
 decano: Alfonso Carriazo Rubio
-vicerrector: María Pastora Revuelta Marchena # de PDI
+vicerrector: María Pastora Revuelta Marchena
 
 # Tus datos personales. Esta parte seguramente no la tendrás que modificar nunca
 
@@ -29,3 +29,17 @@ plaza: Catedrático de Universidad
 departamento: Álgebra
 centro: Facultad de Matemáticas
 transporte: avión, tren, autobús, taxi, automóvil
+
+# Listas de objetivos de los diferentes proyectos vigentes (para que ChatGPT genere escritos explicativos)
+
+MTM-3000-4000:
+    O1: "Develop new mathematical models for complex systems."
+    O2: "Investigate the applications of algebra in cryptography."
+    O3: "Enhance computational methods for solving algebraic equations."
+    O4: "Study the impact of mathematical theories on data science."
+    O5: "Explore the use of algebra in machine learning algorithms."
+    O6: "Analyze the role of mathematics in network security."
+    O7: "Develop educational tools for teaching advanced algebra."
+    O8: "Collaborate with industry partners to apply mathematical research."
+    O9: "Publish findings in high-impact scientific journals."
+    O10: "Organize workshops and conferences to disseminate research."
