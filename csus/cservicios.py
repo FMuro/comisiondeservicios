@@ -140,7 +140,7 @@ def funcion():
                     shutil.copy(os.path.join(
                         carpeta, nombre+"_"+output+".tex"), ".")
                 else:
-                    os.system("pdflatex -output-directory=" +
+                    os.system("lualatex -pdf -output-directory=" +
                               carpeta+" "+os.path.join(carpeta, nombre+"_"+output+".tex"))
                     shutil.copy(os.path.join(
                         carpeta, nombre+"_"+output+".pdf"), ".")
